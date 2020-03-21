@@ -50,13 +50,13 @@ cd server && npm install
 
 6. 启动项目：npm dev 或者 npm start ,
 ```bash
-npm dev
+npm run dev
 ```
 
 或者
 
 ```bash
-npm start
+npm run start
 ```
 
 npm dev:是基于supervisor启动的修改代码有实时更新

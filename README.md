@@ -5,7 +5,7 @@
 ```
 ├── public    
 ├── server            // 后端项目
-│   ├── api           // 接口模块（路由）                              
+│   ├── api           // 接口模块（路由）                              
 │   ├── config        // mysql配置、控制台日志配置                              
 │   ├── controller    // 数据库增删改查操作                              
 │   ├── lib           // 链接数据库、sql操作                              
@@ -16,6 +16,7 @@
 │   ├── .gitignore    // git忽略目录、文件配置                             
 │   ├── app.js        // 项目主入口                           
 ├── src                                         
+│   ├── api                                        
 │   ├── assets                             
 │   │   └── css                              
 │   │       └── styles.css                                          

@@ -71,7 +71,7 @@ let list =
   `create table if not exists list(
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(100) NOT NULL COMMENT '标题',
-    isComplete VARCHAR(100) NOT NULL COMMENT '状态',
+    isComplete tinyint(11) NOT NULL COMMENT '状态',
     PRIMARY KEY ( id )
   );`
 

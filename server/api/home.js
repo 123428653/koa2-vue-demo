@@ -11,6 +11,12 @@ router.post('/del', controller.delSql)
 
 router.post('/update', controller.updateSql)
 
+/* Mongodb start */
+/* Mongodb操作 */
+// router.get('/home', controller.getHome)
+// router.post('/add', controller.addDB)
+/* Mongodb end */
+
 // 动态跨域请求
 router.post('/all', async ctx => {
   let url = ctx.request.body.url

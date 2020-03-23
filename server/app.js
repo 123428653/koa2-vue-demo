@@ -9,7 +9,36 @@ const Router = require('koa-router')
 const config = require('./config')
 const {logger, errLogger} = require('./middleware/log') // 日志
 let home = require('./api/home')
+/* Mongodb start */
+// let { connect, initSchemas } = require('./lib/mongoDB')
+// const mongoose = require('mongoose')
+/* Mongodb end */
 const app = new Koa()
+
+/* Mongodb start */
+// ;(async() => {
+//   // 链接数据库
+//   await connect()
+
+//   // 创建Schema/发布模型
+//   initSchemas()
+
+//   // 获取模型，操作模型
+//   // const Home2 = mongoose.model('Home')
+//   // // await Home2.find().sort({title: 1}).exec().then(res => {
+//   // //   console.log(res, 111)
+//   // // })
+//   // let oneHome = new Home2({
+//   //   title: '吃饭睡觉打豆豆~',
+//   //   isComplete: true
+//   // })
+
+//   // // 插入数据
+//   // oneHome.save().then(() => {
+//   //   console.log('插入成功')
+//   // })
+// })()
+/* Mongodb end */
 
 // 模块化路由
 let router = new Router()

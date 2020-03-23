@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "axios": "^0.19.2",
+    "glob": "^7.1.6",
     "koa": "^2.11.0",
     "koa-body": "^4.1.1",
     "koa-log4": "^2.3.2",
@@ -15,6 +16,7 @@
     "koa-session-minimal": "^3.0.4",
     "koa-static-cache": "^5.1.2",
     "koa2-cors": "^2.0.6",
+    "mongoose": "^5.9.5",
     "mysql": "^2.18.1"
   },
   "devDependencies": {

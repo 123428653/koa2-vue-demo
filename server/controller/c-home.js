@@ -1,5 +1,10 @@
 const model = require('../lib/sql')
 
+/* Mongodb start */
+// const {home} = require('../lib/model/index')
+/* Mongodb end */
+
+
 // 获取数据列表
 exports.getList = async ctx => {
   let param = ctx.query || ctx.params
@@ -59,3 +64,43 @@ exports.updateSql = async ctx => {
     }
   })
 }
+
+
+/**
+ * 
+ * 
+ * Mongodb操作查询
+ * 
+ * 
+ * */
+/* Mongodb start */
+// Mongodb查询
+// exports.getHome = async ctx => {
+//   // const mgModel = require('../lib/model/index')
+//   await home().find().sort({title: 1}).exec().then(res => {
+//     ctx.body = {
+//       status: 200,
+//       message: 'mongodb数据获取成功！',
+//       data: res
+//     }
+//   })
+// }
+
+// // 添加单条数据
+// exports.addDB = async ctx => {
+//   // console.log(ctx)
+//   let {title, isComplete} = ctx.request.body
+//   const Home2 = home()
+//   const oneHome = new Home2({
+//     title,
+//     isComplete: isComplete || 0
+//   })
+//   await oneHome.save().then(() => {
+//     console.log('插入成功')
+//     ctx.body = {
+//       status: 200,
+//       message: 'success'
+//     }
+//   })
+// }
+/* Mongodb end */

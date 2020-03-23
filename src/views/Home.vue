@@ -58,7 +58,7 @@
             </li>
         </ul>
 
-      <div class="page" v-if="visibility === 'all' && totalPage > 1">
+      <div class="page" v-if="(visibility === 'all' || !visibility) && totalPage > 1">
         <a
           v-for="num in totalPage"
           :key="num"

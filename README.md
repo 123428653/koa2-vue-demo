@@ -4,17 +4,21 @@
 
 ```
 ├── public    
-├── server            // 后端项目
-│   ├── api           // 接口模块（路由）                              
-│   ├── config        // mysql配置、控制台日志配置                              
-│   ├── controller    // 数据库增删改查操作                              
-│   ├── lib           // 链接数据库、sql操作                              
-│   ├── logs          // 控制台日志输出                              
-│   ├── middleware    // koa中间件                              
-│   ├── public        // 静态资源                              
-│   ├── .babelrc      // babel配置（async）                              
-│   ├── .gitignore    // git忽略目录、文件配置                             
-│   ├── app.js        // 项目主入口                           
+├── server                  // 后端项目
+│   ├── api                 // 接口模块（路由）                              
+│   ├── config              // mysql配置、控制台日志配置                              
+│   ├── controller          // 数据库增删改查操作                              
+│   ├── lib                 // 链接数据库、sql操作 (新增Mongodb的支持)         
+│   │   └── model           // 模型对象 (Mongodb)                         
+│   │   └── schema          // Schema (Mongodb,类似于创建数据表/声明字段类型等)                         
+│   │   └── mongoDB.js      // 链接Mongodb数据库/引入Schema (Mongodb)                         
+│   │   └── sql.js          // 链接Mysql / sql语句封装                       
+│   ├── logs                // 控制台日志输出                              
+│   ├── middleware          // koa中间件                              
+│   ├── public              // 静态资源                              
+│   ├── .babelrc            // babel配置（async）                              
+│   ├── .gitignore          // git忽略目录、文件配置                             
+│   ├── app.js              // 项目主入口                           
 ├── src                                         
 │   ├── api                                        
 │   ├── assets                             
@@ -63,6 +67,11 @@ npm run start
 npm dev:是基于supervisor启动的修改代码有实时更新
 
 npm start:基于pm2后台进行启动(可用于生产环境)
+
+## MongoDB相关
+
+接口待完善。
+
 
 ## 前端项目安装、启动
 

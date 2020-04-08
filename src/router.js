@@ -13,6 +13,11 @@ export default new Router({
       name: 'home',
       component: Home
     },
+    {
+      path: '/hello',
+      name: 'hell',
+      component: () => import('./views/HelloWorld')
+    }
     // {
     //   path: '/about',
     //   name: 'about',

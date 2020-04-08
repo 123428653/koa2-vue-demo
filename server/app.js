@@ -66,7 +66,7 @@ app.use(session({
 }))
 
 // 设置静态资源目录
-app.use(staticCache(path.join(__dirname, 'public'), {
+app.use(staticCache(path.join(__dirname, 'public'), { dynamic: true }, {
   maxAge: 365 * 24 * 60 * 60
 }))
 

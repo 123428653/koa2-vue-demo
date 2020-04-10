@@ -1,10 +1,8 @@
 <template>
   <div>
     <div class="page-top">
-    <div class="page-content">
-        <h2>任务计划列表</h2>
+      <h2>任务计划列表</h2>
     </div>
-</div>
 <div class="main">
     <h3 class="big-title">添加任务：</h3>
     <input
@@ -17,12 +15,15 @@
     <ul class="task-count">
         <li>{{unComplete}}个任务未完成</li>
         <li class="action">
-            <a :class="{active:visibility!=='unCompleted'&&visibility!=='completed'}" href="#all">所有任务</a>
-            <a :class="{active:visibility==='unCompleted'}" href="#unCompleted">未完成的任务</a>
-            <a :class="{active:visibility==='completed'}" href="#completed">完成的任务</a>
+            <a :class="{active:visibility!=='unCompleted'&&visibility!=='completed'}" href="#all">全部</a>
+            <a :class="{active:visibility==='unCompleted'}" href="#unCompleted">未完成</a>
+            <a :class="{active:visibility==='completed'}" href="#completed">已完成</a>
         </li>
     </ul>
-    <h3 class="big-title">任务列表：</h3>
+    <div class="til">
+      <h3 class="big-title">任务列表：</h3>
+      <router-link to="/hello">测试History</router-link>
+    </div>
     <p style="color:#dd4b39;font-size:12px;">提示: 双击内容可以编辑</p>
     <div class="tasks">
  
@@ -156,6 +157,8 @@ export default {
                 isComplete: 0
               });
               this.todo = "";
+              this.page = 1
+              this.getList()
             }
           })
       },
@@ -259,6 +262,28 @@ export default {
 </script>
 
 <style scoped>
+
+@media screen and (max-width: 768px){
+  .main {
+    width: 90%;
+  }
+}
+.page-top h2{
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  color: #fff;
+}
+.action a {
+  margin: 0 4px;
+}
+.task-count li {
+  padding-left: 0;
+}
+.task-count li:first-child {
+  width: 150px;
+  flex: none;
+}
 .page {
   text-align: center;
   padding: 20px 0;
@@ -279,5 +304,19 @@ export default {
   border-color: #eee;
   cursor: default;
   pointer-events: none;
+}
+.til {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.til a {
+  color: lightcoral;
+  text-decoration: underline;
+}
+.todo-list li.editing .edit {
+  margin-left: 43px;
+  width: 80%;
+  box-sizing: border-box;
 }
 </style>

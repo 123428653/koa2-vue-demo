@@ -26,7 +26,7 @@ export default {
   },
   getList (params) {
     return http({
-      url: `http://localhost:3001/home/list`,
+      url: `/home/list`,
       params
     })
   },

@@ -1,5 +1,9 @@
 <template>
-  <div>Hello World~~ --- {{msg}}</div>
+  <div class="hello">
+    <h2>Hello Koa</h2>
+    <p>{{msg}}</p>
+    <router-link to="/">Go to Home</router-link>
+  </div>
 </template>
 
 <script>
@@ -15,25 +19,20 @@ export default {
 </script>
 
 <style scoped>
-.page {
-  text-align: center;
-  padding: 20px 0;
+.hello{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 25px;
+  flex-direction: column;
+  font-weight: bold;
 }
-.page a {
-  display: inline-block;
-  padding: 2px 10px;
-  border: 1px solid #ddd;
-  margin-right: 10px;
-  -webkit-user-select: none;
+h2 {
+  font-size: 25px;
 }
-.page a:last-child {
-  margin-right: 0;
-}
-.page a.current {
-  background: #eee;
-  color: #999;
-  border-color: #eee;
-  cursor: default;
-  pointer-events: none;
+a {
+  text-decoration: underline;
+  color: lightcoral;
 }
 </style>

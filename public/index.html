@@ -5,7 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>vue-todolist</title>
+    <title>Qin test</title>
+    <style>
+      #universe {
+		    position: fixed;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    background: radial-gradient(1600px at 70% 120%, #212750 10%, #020409 100%);
+		    z-index: -1;
+		  }
+    </style>
   </head>
   <body>
     <noscript>
@@ -13,5 +24,7 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <canvas id="universe"></canvas>
+	  <script type="text/javascript" src="./canvas_bg.js"></script>
   </body>
 </html>

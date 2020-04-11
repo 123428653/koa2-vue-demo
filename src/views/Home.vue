@@ -4,27 +4,32 @@
       <h2>任务计划列表</h2>
     </div>
 <div class="main">
-    <h3 class="big-title">添加任务：</h3>
-    <input
-            placeholder="例如：吃饭睡觉打豆豆；    提示：+回车即可添加任务"
-            class="task-input"
-            type="text"
-           v-on:keyup.enter="enterFn"
-            v-model="todo"
-    />
-    <ul class="task-count">
-        <li>{{unComplete}}个任务未完成</li>
+    <div class="item">
+      <h3 class="big-title">添加任务：</h3>
+      <input
+        placeholder="例如：吃饭睡觉打豆豆； 提示：+回车即可添加任务"
+        class="task-input"
+        type="text"
+        v-on:keyup.enter="enterFn"
+        v-model="todo"
+      />
+      <ul class="task-tab">
         <li class="action">
-            <a :class="{active:visibility!=='unCompleted'&&visibility!=='completed'}" href="#all">全部</a>
-            <a :class="{active:visibility==='unCompleted'}" href="#unCompleted">未完成</a>
-            <a :class="{active:visibility==='completed'}" href="#completed">已完成</a>
+          <a :class="{active:visibility!=='unCompleted'&&visibility!=='completed'}" href="#all">全部</a>
+          <a :class="{active:visibility==='unCompleted'}" href="#unCompleted">未完成</a>
+          <a :class="{active:visibility==='completed'}" href="#completed">已完成</a>
         </li>
-    </ul>
+      </ul>
+    </div>
     <div class="til">
       <h3 class="big-title">任务列表：</h3>
       <router-link to="/hello">测试History</router-link>
     </div>
-    <p style="color:#dd4b39;font-size:12px;">提示: 双击内容可以编辑</p>
+    <div class="task-til">
+      <p style="font-size:12px;">提示: 双击内容可以编辑</p>
+      <span>{{unComplete}} 个任务未完成</span>
+    </div>
+    
     <div class="tasks">
  
         <span class="no-task-tip" v-show="!list.length">还没有添加任何任务</span>
@@ -268,14 +273,40 @@ export default {
     width: 90%;
   }
 }
+.big-title {
+  color: #dee2e6;
+}
+.task-input {
+  height: 35px;
+  line-height: 35px;
+  border-radius: 3px;
+}
+.page-top {
+  background-color: lightcoral
+}
 .page-top h2{
   text-align: center;
   font-size: 18px;
   line-height: 40px;
-  color: #fff;
+  color: #dee2e6;
+}
+.task-tab {
+  margin: 20px 0 0 0;
 }
 .action a {
   margin: 0 4px;
+  color: #dee2e6;
+  background: rgba(255,255,255,0.1);
+}
+.action a.active {
+  background-color: lightcoral;
+  border: none;
+}
+.task-til {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: lightcoral;
 }
 .task-count li {
   padding-left: 0;
@@ -318,5 +349,12 @@ export default {
   margin-left: 43px;
   width: 80%;
   box-sizing: border-box;
+}
+.item {
+  padding: 16px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  color: #dee2e6;
+  margin-top: 20px;
 }
 </style>
